@@ -8,3 +8,218 @@ z2
 !i10f 100
 cModel Technology
 dH:/quartus
+Earithunit
+w1585630616
+Z0 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dH:/Documents/GitHub/ENSC350FP/ExU/Simulation
+8../SourceCode/ArithUnit.vhd
+F../SourceCode/ArithUnit.vhd
+l0
+L6
+VL=c^XgDk>UZ[iR8=SM^<A1
+!s100 YFYgAGNEJ<m;lBZ_I=jPc3
+Z5 OV;C;10.5b;63
+33
+Z6 !s110 1585634348
+!i10b 1
+Z7 !s108 1585634348.000000
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/ArithUnit.vhd|
+!s107 ../SourceCode/ArithUnit.vhd|
+!i113 1
+Z8 o-work work -2008 -explicit
+Z9 tExplicit 1 CvgOpt 0
+Efulladder
+Z10 w1585633089
+R0
+R1
+R2
+R3
+R4
+Z11 8../SourceCode/Adder.vhd
+Z12 F../SourceCode/Adder.vhd
+l0
+L20
+VbK;YE[2CcD<`BWPgW`KDB3
+!s100 c7BBTbVM3OIb@2WGYW>K_1
+R5
+33
+R6
+!i10b 1
+R7
+Z13 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/Adder.vhd|
+Z14 !s107 ../SourceCode/Adder.vhd|
+!i113 1
+R8
+R9
+Artl
+R0
+R1
+R2
+R3
+Z15 DEx4 work 9 fulladder 0 22 bK;YE[2CcD<`BWPgW`KDB3
+l42
+L41
+V66OUDY=Kg_713<ZJleFJ=3
+!s100 bg>zLQDTEPQOM>NmnSlhU0
+R5
+33
+R6
+!i10b 1
+R7
+R13
+R14
+!i113 1
+R8
+R9
+Abehaviour
+R0
+R1
+R2
+R3
+DEx4 work 9 fulladder 0 22 Pz5Q]mT8RoEkN9nNhah^Y0
+l42
+L41
+V<M]O[=8[R?l1nz0BMR3;30
+!s100 >V<Tb`RfbO3TRnE7=Jb232
+R5
+32
+!s110 1585632913
+!i10b 1
+!s108 1585632913.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|H:/Documents/GitHub/ENSC350FP/ExU/Simulation/Adder.vhd|
+!s107 H:/Documents/GitHub/ENSC350FP/ExU/Simulation/Adder.vhd|
+!i113 1
+o-work work -2002 -explicit
+R9
+FH:/Documents/GitHub/ENSC350FP/ExU/Simulation/Adder.vhd
+w1585632911
+8H:/Documents/GitHub/ENSC350FP/ExU/Simulation/Adder.vhd
+Erippleadder
+R10
+R0
+R1
+R2
+R3
+R4
+R11
+R12
+l0
+L6
+V>F9V05X0LkibP2f76]S9>1
+!s100 leo<;d]AF76fkE^@Ia^2]3
+R5
+33
+R6
+!i10b 1
+R7
+R13
+R14
+!i113 1
+R8
+R9
+Artl
+R15
+R0
+R1
+R2
+R3
+DEx4 work 11 rippleadder 0 22 >F9V05X0LkibP2f76]S9>1
+l32
+L30
+Vdc0:_Aai`=C=<W=_aD=LM1
+!s100 ]IkzYIJL`>lzAQUGQ19II1
+R5
+33
+R6
+!i10b 1
+R7
+R13
+R14
+!i113 1
+R8
+R9
+Etbarithunit
+Z16 w1585544590
+Z17 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R4
+Z18 8TBArithUnit.vhd
+Z19 FTBArithUnit.vhd
+l0
+L7
+VH?jnlGf<UDYSYk@9Scd433
+!s100 nV1D7fnIP>bl9@SHD^z]H1
+R5
+33
+R6
+!i10b 1
+R7
+Z20 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|TBArithUnit.vhd|
+Z21 !s107 TBArithUnit.vhd|
+!i113 1
+R8
+R9
+Abehavioural
+R17
+R2
+R3
+Z22 DEx4 work 11 tbarithunit 0 22 H?jnlGf<UDYSYk@9Scd433
+l35
+L11
+Z23 VVY<aabdg2gPM0UiDnUcmT3
+Z24 !s100 ?6lWP>bBzdjVm`HZSX8U62
+R5
+33
+R6
+!i10b 1
+R7
+R20
+R21
+!i113 1
+R8
+R9
+Etblogicunit
+R16
+R17
+R2
+R3
+R4
+Z25 8H:/Documents/GitHub/ENSC350FP/ExU/Simulation/TBLogicUnit.vhd
+Z26 FH:/Documents/GitHub/ENSC350FP/ExU/Simulation/TBLogicUnit.vhd
+l0
+L7
+V:aF1E7<jIb_KJZ4nYJZ[i3
+!s100 1CFj:XSGgajROW^G:?_><3
+R5
+33
+Z27 !s110 1585632884
+!i10b 1
+Z28 !s108 1585632884.000000
+Z29 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|H:/Documents/GitHub/ENSC350FP/ExU/Simulation/TBLogicUnit.vhd|
+Z30 !s107 H:/Documents/GitHub/ENSC350FP/ExU/Simulation/TBLogicUnit.vhd|
+!i113 1
+R8
+R9
+Abehavioural
+R17
+R2
+R3
+DEx4 work 11 tblogicunit 0 22 :aF1E7<jIb_KJZ4nYJZ[i3
+l46
+L11
+VHUeAiGW2Qh9JTcLaXDng61
+!s100 37^bbYcBSd`8Q]bJE`n223
+R5
+33
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R8
+R9

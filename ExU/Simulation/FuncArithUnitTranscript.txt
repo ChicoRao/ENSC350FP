@@ -1,0 +1,57 @@
+# End time: 22:59:08 on Mar 30,2020, Elapsed time: 0:06:19
+# Errors: 0, Warnings: 0
+#----------------------------------------------------------------------------------------------------------
+# compile
+#----------------------------------------------------------------------------------------------------------
+# vcom -work work -2008 -explicit -stats=none ../SourceCode/Adder.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity RippleAdder
+# -- Compiling entity FullAdder
+# -- Compiling architecture rtl of RippleAdder
+# -- Compiling architecture rtl of FullAdder
+# 
+# vcom -work work -2008 -explicit -stats=none ../SourceCode/ArithUnit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ArithUnit
+# 
+# vcom -work work -2008 -explicit -stats=none TBArithUnit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TbArithUnit
+# -- Compiling architecture behavioural of TbArithUnit
+# 
+# vcom -work work -2008 -explicit -stats=time,-cmd,msg ConfigExU.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:59:08 on Mar 30,2020
+# -- Loading package STANDARD
+# -- Compiling configuration FuncLUSim
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity TbLogicUnit
+# -- Loading architecture behavioural of TbLogicUnit
+# ** Error: (vcom-11) Could not find work.logicunit.
+# ** Error (suppressible): ConfigExU.vhd(3): (vcom-1195) Cannot find expanded name "work.LogicUnit".
+# ** Error: ConfigExU.vhd(3): (vcom-1105) Name (indexed name) does not denote an entity name.
+# ** Error: ConfigExU.vhd(3): Unknown expanded name.
+# ** Error: ConfigExU.vhd(5): VHDL Compiler exiting
+# End time: 22:59:08 on Mar 30,2020, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: H:/quartus/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./FunctionalArithUnit.do line 13
+# H:/quartus/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work -2008 -explicit -stats=time,-cmd,msg ConfigExU.vhd"
