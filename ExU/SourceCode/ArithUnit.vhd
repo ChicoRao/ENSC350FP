@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 Entity ArithUnit is
 	Generic ( N : natural := 64 );
@@ -18,13 +19,23 @@ architecture rtl of ArithUnit is
 	signal a1, b1, s1: std_logic_vector(N-1 downto 0);
 	signal cout1, cout2: std_logic;
 	signal internalOvfl:std_logic;
+	signal signExt: std_logic_vector(N-1 downto 0);
+	signal output: std_logic_vector(N-1 downto 0);
 begin
 	--MUX for B
-	b1 <= NOT B when AddnSub = '1' else
-	      B;
+	BMUX: for i in 0 to N-1 generate
+	begin
+	b1(i) <= NOT B(i) when AddnSub = '1' else
+	      B(i);
+	end generate BMUX;
+
 	--MUX for A
-	a1 <= NOT A when NotA = '1' else
-	      A;
+	AMUX: for i in 0 to N-1 generate
+	begin
+	a1(i) <= NOT A(i) when NotA = '1' else
+	      A(i);
+	end generate AMUX;
+
 	-- 64-bit Ripple Adder
 	add: entity Work.rippleadder port map ( a1, b1, AddnSub, s1, cout1, cout2);
 	Cout <= cout1;
@@ -37,11 +48,17 @@ begin
 	Ovfl <= internalOvfl;
 	
 	--MUX for ExtWord
-	Y <=  sxt(s1, N-1) when ExtWord = '1' else
-	      s1;
+
+	signExt(31 downto 0) <= s1(31 downto 0);
+  	signExt(N-1 downto 32) <= (N-1 downto 32 => s1(31));
+
+	output <= signExt when ExtWord = '1' else
+	      	s1;
+
+	Y <= output;
 	
 	--AltB and AltBu
 	AltBu <= NOT cout1;
-	AltB <=  s1(N-1) XOR internalOvfl;
+	AltB <=  output(N-1) XOR internalOvfl;
 	
 end architecture rtl;

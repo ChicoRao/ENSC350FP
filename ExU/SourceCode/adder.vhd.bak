@@ -43,4 +43,4 @@ Architecture rtl of FullAdder is
 BEGIN
 	S <= X XOR Y XOR Cin;
 	Cout <= (X AND Y) OR (Cin AND (X OR Y));
-END rtl;
+END architecture rtl;
