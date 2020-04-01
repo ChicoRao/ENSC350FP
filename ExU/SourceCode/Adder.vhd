@@ -36,6 +36,7 @@ begin
 		begin
           		RippleAdder: entity Work.FullAdder port map ( Xin(i), Yin(i), internalC(i), S(i), internalC(i+1));
 		end generate rippleAdder;
+		Cout <= internalC(width);
 		Cout2 <= internalC(width-1);
 end architecture rtl;
 
