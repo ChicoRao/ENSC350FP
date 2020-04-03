@@ -9,13 +9,13 @@ z2
 cModel Technology
 dH:/quartus
 Earithunit
-Z0 w1585781519
+Z0 w1585782213
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z6 dC:/Users/Rico/Desktop/ENSC 350 Part1/ENSC350FP/ExU/Simulation
+Z6 dH:/Documents/GitHub/ENSC350FP/ExU/Simulation
 Z7 8../SourceCode/ArithUnit.vhd
 Z8 F../SourceCode/ArithUnit.vhd
 l0
@@ -24,9 +24,9 @@ V[:QDnh100Oea464EAPTe83
 !s100 eEH?]90Bl^gZo7_@mi5AT3
 Z9 OV;C;10.5b;63
 33
-Z10 !s110 1585781528
+Z10 !s110 1585887289
 !i10b 1
-Z11 !s108 1585781528.000000
+Z11 !s108 1585887289.000000
 Z12 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/ArithUnit.vhd|
 Z13 !s107 ../SourceCode/ArithUnit.vhd|
 !i113 1
@@ -76,16 +76,15 @@ R13
 R14
 R15
 w1585717629
-dH:/Documents/GitHub/ENSC350FP/ExU/Simulation
 Efulladder
-Z18 w1585777765
+R0
 R2
 R3
 R4
 R5
 R6
-Z19 8../SourceCode/Adder.vhd
-Z20 F../SourceCode/Adder.vhd
+Z18 8../SourceCode/Adder.vhd
+Z19 F../SourceCode/Adder.vhd
 l0
 L20
 VbK;YE[2CcD<`BWPgW`KDB3
@@ -95,8 +94,8 @@ R9
 R10
 !i10b 1
 R11
-Z21 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/Adder.vhd|
-Z22 !s107 ../SourceCode/Adder.vhd|
+Z20 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/Adder.vhd|
+Z21 !s107 ../SourceCode/Adder.vhd|
 !i113 1
 R14
 R15
@@ -105,7 +104,7 @@ R2
 R3
 R4
 R5
-Z23 DEx4 work 9 fulladder 0 22 bK;YE[2CcD<`BWPgW`KDB3
+Z22 DEx4 work 9 fulladder 0 22 bK;YE[2CcD<`BWPgW`KDB3
 l44
 L43
 V]UOBI>GmOX3BGzLQc0l4J1
@@ -115,86 +114,86 @@ R9
 R10
 !i10b 1
 R11
+R20
 R21
-R22
 !i113 1
 R14
 R15
 Cfuncausim
-Z24 eTbArithUnit
-Z25 abehavioural
+Z23 eTbArithUnit
+Z24 abehavioural
 R2
 R3
 R17
-Z26 DAx4 work 11 tbarithunit 11 behavioural 22 VY<aabdg2gPM0UiDnUcmT3
+Z25 DAx4 work 11 tbarithunit 11 behavioural 22 VY<aabdg2gPM0UiDnUcmT3
 R1
 R4
 R5
-Z27 DEx4 work 11 tbarithunit 0 22 H?jnlGf<UDYSYk@9Scd433
-Z28 w1585544758
+Z26 DEx4 work 11 tbarithunit 0 22 H?jnlGf<UDYSYk@9Scd433
+Z27 w1585544590
 R6
-Z29 8ConfigExU.vhd
-Z30 FConfigExU.vhd
+Z28 8ConfigExU.vhd
+Z29 FConfigExU.vhd
 l0
 L15
 V`<aJ^VfHk75_i^^[9k2ZV0
 !s100 ?D3XPUQgkHV;RRBPGZ^T;3
 R9
 33
-R10
+Z30 !s110 1585887290
 !i10b 1
-R11
-Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ConfigExU.vhd|
-Z32 !s107 ConfigExU.vhd|
+Z31 !s108 1585887290.000000
+Z32 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ConfigExU.vhd|
+Z33 !s107 ConfigExU.vhd|
 !i113 1
 R14
 R15
 Cfunclusim
-Z33 eTbLogicUnit
-R25
-Z34 DEx4 work 9 logicunit 0 22 SeY2ioNS1@1ROz7J?G8IO3
-Z35 DAx4 work 11 tblogicunit 11 behavioural 22 HUeAiGW2Qh9JTcLaXDng61
+Z34 eTbLogicUnit
+R24
+Z35 DEx4 work 9 logicunit 0 22 SeY2ioNS1@1ROz7J?G8IO3
+Z36 DAx4 work 11 tblogicunit 11 behavioural 22 HUeAiGW2Qh9JTcLaXDng61
 R1
 R4
 R5
-Z36 DEx4 work 11 tblogicunit 0 22 :aF1E7<jIb_KJZ4nYJZ[i3
-R28
+Z37 DEx4 work 11 tblogicunit 0 22 :aF1E7<jIb_KJZ4nYJZ[i3
+R27
 R6
+R28
 R29
-R30
 l0
 L1
 VUz6o]e?NCzlMVDRM7DK1X3
 !s100 1I?ZbB3Lg;edQG`Y4C?z70
 R9
 33
-R10
+R30
 !i10b 1
-R11
 R31
 R32
+R33
 !i113 1
 R14
 R15
 Elogicunit
-Z37 w1585710505
+Z38 w1585635729
 R1
 R4
 R5
 R6
-Z38 8../SourceCode/LogicUnit.vhd
-Z39 F../SourceCode/LogicUnit.vhd
+Z39 8../SourceCode/LogicUnit.vhd
+Z40 F../SourceCode/LogicUnit.vhd
 l0
 L5
 VSeY2ioNS1@1ROz7J?G8IO3
 !s100 _DS<GPT>BhizJQ<d3A4<J3
 R9
 33
-Z40 !s110 1585771250
+Z41 !s110 1585885144
 !i10b 1
-Z41 !s108 1585771250.000000
-Z42 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/LogicUnit.vhd|
-Z43 !s107 ../SourceCode/LogicUnit.vhd|
+Z42 !s108 1585885144.000000
+Z43 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/LogicUnit.vhd|
+Z44 !s107 ../SourceCode/LogicUnit.vhd|
 !i113 1
 R14
 R15
@@ -202,30 +201,30 @@ Artl
 R1
 R4
 R5
-R34
+R35
 l14
 L12
 VnWYcC1_BoZ<Vf5:HAk5YE1
 !s100 06@ZKCzbJDcQjQ69O2]V12
 R9
 33
-R40
-!i10b 1
 R41
+!i10b 1
 R42
 R43
+R44
 !i113 1
 R14
 R15
 Erippleadder
-R18
+R0
 R2
 R3
 R4
 R5
 R6
+R18
 R19
-R20
 l0
 L6
 VDTLJiGUXEd44J`eQZ:9HG0
@@ -235,13 +234,13 @@ R9
 R10
 !i10b 1
 R11
+R20
 R21
-R22
 !i113 1
 R14
 R15
 Artl
-R23
+R22
 R2
 R3
 R4
@@ -256,13 +255,13 @@ R9
 R10
 !i10b 1
 R11
+R20
 R21
-R22
 !i113 1
 R14
 R15
 Etbarithunit
-Z44 w1585780870
+R27
 R1
 R4
 R5
@@ -287,7 +286,7 @@ Abehavioural
 R1
 R4
 R5
-R27
+R26
 l35
 L11
 VVY<aabdg2gPM0UiDnUcmT3
@@ -303,7 +302,7 @@ R48
 R14
 R15
 Etblogicunit
-R28
+R27
 R1
 R4
 R5
@@ -316,9 +315,9 @@ V:aF1E7<jIb_KJZ4nYJZ[i3
 !s100 1CFj:XSGgajROW^G:?_><3
 R9
 33
-R40
-!i10b 1
 R41
+!i10b 1
+R42
 Z51 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|TBLogicUnit.vhd|
 Z52 !s107 TBLogicUnit.vhd|
 !i113 1
@@ -328,74 +327,74 @@ Abehavioural
 R1
 R4
 R5
-R36
+R37
 l46
 L11
 VHUeAiGW2Qh9JTcLaXDng61
 !s100 37^bbYcBSd`8Q]bJE`n223
 R9
 33
-R40
-!i10b 1
 R41
+!i10b 1
+R42
 R51
 R52
 !i113 1
 R14
 R15
 Ctimeausim
+R23
 R24
-R25
 R2
 R3
 R17
-R26
+R25
 R1
 R4
 R5
+R26
 R27
-R28
 R6
+R28
 R29
-R30
 l0
 L22
 Vc@j0<]>]2McV@A_In0?[D3
 !s100 R2Kc^HfY?<C>3UmQcD?gm0
 R9
 33
-R10
+R30
 !i10b 1
-R11
 R31
 R32
+R33
 !i113 1
 R14
 R15
 Ctimelusim
-R33
-R25
 R34
+R24
 R35
+R36
 R1
 R4
 R5
-R36
-R28
+R37
+R27
 R6
+R28
 R29
-R30
 l0
 L8
 Vj`:ZLjB?3a?cGJhV;ID502
 !s100 YGhEgiCJcm@dDJh:JeAi`1
 R9
 33
-R10
+R30
 !i10b 1
-R11
 R31
 R32
+R33
 !i113 1
 R14
 R15
