@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ExU
-Thu Apr 02 22:49:13 2020
+Sun Apr 05 16:07:12 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,8 +14,8 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |LogicUnit
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ArithUnit
+ 10. Parameter Settings for User Entity Instance: rippleadder:add
  11. Post-Synthesis Netlist Statistics for Top Partition
  12. Elapsed Time Per Partition
  13. Analysis & Synthesis Messages
@@ -44,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 02 22:49:13 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 05 16:07:12 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ExU                                         ;
-; Top-level Entity Name              ; LogicUnit                                   ;
+; Top-level Entity Name              ; ArithUnit                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 64                                          ;
-;     Total combinational functions  ; 64                                          ;
+; Total logic elements               ; 247                                         ;
+;     Total combinational functions  ; 247                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 194                                         ;
+; Total pins                         ; 200                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; LogicUnit          ; ExU                ;
+; Top-level entity name                                            ; ArithUnit          ; ExU                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -168,49 +168,115 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; SourceCode/LogicUnit.vhd         ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd ;         ;
+; SourceCode/ArithUnit.vhd         ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd ;         ;
+; SourceCode/Adder.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd     ;         ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 64               ;
-;                                             ;                  ;
-; Total combinational functions               ; 64               ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 64               ;
-;     -- 3 input functions                    ; 0                ;
-;     -- <=2 input functions                  ; 0                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 64               ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 194              ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; LogicFN[1]~input ;
-; Maximum fan-out                             ; 64               ;
-; Total fan-out                               ; 514              ;
-; Average fan-out                             ; 1.14             ;
-+---------------------------------------------+------------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 247        ;
+;                                             ;            ;
+; Total combinational functions               ; 247        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 153        ;
+;     -- 3 input functions                    ; 31         ;
+;     -- <=2 input functions                  ; 63         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 247        ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 200        ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; NotA~input ;
+; Maximum fan-out                             ; 129        ;
+; Total fan-out                               ; 1100       ;
+; Average fan-out                             ; 1.70       ;
++---------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |LogicUnit                 ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |LogicUnit          ; LogicUnit   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-------------+--------------+
+; |ArithUnit                                    ; 247 (119)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 200  ; 0            ; |ArithUnit                                                       ; ArithUnit   ; work         ;
+;    |rippleadder:add|                          ; 128 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add                                       ; rippleadder ; work         ;
+;       |FullAdder:\rippleAdder:0:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:10:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:10:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:11:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:11:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:12:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:12:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:13:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:13:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:14:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:14:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:15:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:15:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:16:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:16:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:17:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:17:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:18:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:18:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:19:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:19:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:1:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:1:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:20:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:20:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:21:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:21:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:22:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:22:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:23:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:23:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:24:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:24:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:25:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:25:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:26:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:26:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:27:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:27:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:28:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:28:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:29:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:29:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:2:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:2:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:30:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:30:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:31:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:31:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:32:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:32:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:33:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:33:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:34:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:34:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:35:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:35:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:36:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:36:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:37:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:37:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:38:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:38:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:39:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:39:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:3:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:3:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:40:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:40:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:41:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:41:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:42:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:42:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:43:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:43:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:44:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:44:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:45:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:45:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:46:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:46:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:47:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:47:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:48:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:48:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:49:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:49:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:4:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:4:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:50:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:50:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:51:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:51:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:52:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:52:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:53:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:53:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:54:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:54:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:55:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:55:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:56:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:56:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:57:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:57:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:58:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:58:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:59:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:59:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:5:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:5:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:60:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:60:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:61:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:61:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:62:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:62:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:63:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:63:RippleAdder ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:6:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:6:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:7:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:7:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:8:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:8:RippleAdder  ; FullAdder   ; work         ;
+;       |FullAdder:\rippleAdder:9:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArithUnit|rippleadder:add|FullAdder:\rippleAdder:9:RippleAdder  ; FullAdder   ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,17 +295,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |LogicUnit|Y               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |LogicUnit ;
+; Parameter Settings for User Entity Instance: Top-level Entity: |ArithUnit ;
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
@@ -248,18 +305,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rippleadder:add ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; width          ; 64    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 194                         ;
-; cycloneiii_lcell_comb ; 64                          ;
-;     normal            ; 64                          ;
-;         4 data inputs ; 64                          ;
+; boundary_port         ; 200                         ;
+; cycloneiii_lcell_comb ; 248                         ;
+;     normal            ; 248                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 63                          ;
+;         3 data inputs ; 31                          ;
+;         4 data inputs ; 153                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 66.00                       ;
+; Average LUT depth     ; 41.74                       ;
 +-----------------------+-----------------------------+
 
 
@@ -268,7 +338,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -278,7 +348,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Apr 02 22:48:58 2020
+    Info: Processing started: Sun Apr 05 16:06:56 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ExU -c ExU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -293,18 +363,20 @@ Info (12021): Found 4 design units, including 2 entities, in source file sourcec
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/logicunit.vhd
     Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
     Info (12023): Found entity 1: LogicUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
-Info (12127): Elaborating entity "LogicUnit" for the top level hierarchy
+Info (12127): Elaborating entity "ArithUnit" for the top level hierarchy
+Info (12128): Elaborating entity "rippleadder" for hierarchy "rippleadder:add" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 40
+Info (12128): Elaborating entity "FullAdder" for hierarchy "rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 37
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 130 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 64 logic cells
+Info (21057): Implemented 447 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 131 input pins
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 247 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4796 megabytes
-    Info: Processing ended: Thu Apr 02 22:49:13 2020
-    Info: Elapsed time: 00:00:15
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Sun Apr 05 16:07:12 2020
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:36
 
 

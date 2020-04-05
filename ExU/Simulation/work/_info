@@ -9,81 +9,80 @@ z2
 cModel Technology
 dH:/quartus
 Earithunit
-Z0 w1585887851
-Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
-Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z0 w1586124082
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z6 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
-Z7 dC:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/Simulation
-Z8 8ModelSim/ArithUnit.vho
-Z9 FModelSim/ArithUnit.vho
+Z6 dC:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/Simulation
+Z7 8../SourceCode/ArithUnit.vhd
+Z8 F../SourceCode/ArithUnit.vhd
 l0
-L77
-VfPc?o<E8bFb;ziLCAb4GG2
-!s100 K:FXIcNOa^UVD73gHe3f^1
-Z10 OV;C;10.5b;63
+L7
+V[:QDnh100Oea464EAPTe83
+!s100 eEH?]90Bl^gZo7_@mi5AT3
+Z9 OV;C;10.5b;63
 33
-Z11 !s110 1585888025
+Z10 !s110 1586127170
 !i10b 1
-Z12 !s108 1585888025.000000
-Z13 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ModelSim/ArithUnit.vho|
-Z14 !s107 ModelSim/ArithUnit.vho|
+Z11 !s108 1586127170.000000
+Z12 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/ArithUnit.vhd|
+Z13 !s107 ../SourceCode/ArithUnit.vhd|
 !i113 1
-Z15 o-work work -2008 -explicit
-Z16 tExplicit 1 CvgOpt 0
-Astructure
+Z14 o-work work -2008 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Artl
+Z16 DEx4 work 11 rippleadder 0 22 DTLJiGUXEd44J`eQZ:9HG0
 R1
 R2
 R3
 R4
 R5
-R6
-Z17 DEx4 work 9 arithunit 0 22 fPc?o<E8bFb;ziLCAb4GG2
-l773
-L296
-V8dQcWhj>3;nh<O^`fGEU31
-!s100 :gQlk<MU]^TDLC1:z>DZE3
-R10
-33
-R11
-!i10b 1
-R12
-R13
-R14
-!i113 1
-R15
-R16
-Artl
-Z18 DEx4 work 11 rippleadder 0 22 DTLJiGUXEd44J`eQZ:9HG0
-Z19 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z20 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-R4
-R5
-DEx4 work 9 arithunit 0 22 [:QDnh100Oea464EAPTe83
+Z17 DEx4 work 9 arithunit 0 22 [:QDnh100Oea464EAPTe83
 l24
 L18
 ViWK3LF0VlDkfoe2Sg5V?^0
 !s100 i3Em1CJoSK22=8P3k<F0P0
-R10
+R9
 33
-Z22 !s110 1585883870
+R10
 !i10b 1
-Z23 !s108 1585883870.000000
-Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/ArithUnit.vhd|
-Z25 !s107 ../SourceCode/ArithUnit.vhd|
+R11
+R12
+R13
 !i113 1
+R14
 R15
-R16
-Z26 F../SourceCode/ArithUnit.vhd
-Z27 w1585870437
-Z28 8../SourceCode/ArithUnit.vhd
+Astructure
+Z18 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z19 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 g8;l:a_bzlE?3R3d7zk3Z0
+Z20 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+R4
+R5
+Z21 DPx10 cycloneive 21 cycloneive_components 0 22 Yj^f[Ven<H;0LiK:6PWEg0
+DEx4 work 9 arithunit 0 22 fPc?o<E8bFb;ziLCAb4GG2
+l773
+L296
+V8dQcWhj>3;nh<O^`fGEU31
+!s100 :gQlk<MU]^TDLC1:z>DZE3
+R9
+33
+Z22 !s110 1585888025
+!i10b 1
+Z23 !s108 1585888025.000000
+Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ModelSim/ArithUnit.vho|
+Z25 !s107 ModelSim/ArithUnit.vho|
+!i113 1
+R14
+R15
+Z26 FModelSim/ArithUnit.vho
+Z27 w1585887851
+Z28 8ModelSim/ArithUnit.vho
 Abehavioural
-R18
-R20
-R21
+R16
+R2
+R3
 R4
 R5
 DEx4 work 9 arithunit 0 22 L=c^XgDk>UZ[iR8=SM^<A1
@@ -91,46 +90,44 @@ l21
 L17
 VX_k^`[fJTkggHWKiX:EDB3
 !s100 a=z8;S<UMc:;VoQ_QTIRm0
-R10
+R9
 33
 !s110 1585717821
 !i10b 1
 !s108 1585717821.000000
-R24
-R25
+R12
+R13
 !i113 1
+R14
 R15
-R16
 w1585717629
 dH:/Documents/GitHub/ENSC350FP/ExU/Simulation
-R26
-R28
 Efulladder
-R27
-R20
-R21
+R0
+R2
+R3
 R4
 R5
-R7
+R6
 Z29 8../SourceCode/Adder.vhd
 Z30 F../SourceCode/Adder.vhd
 l0
 L20
 VbK;YE[2CcD<`BWPgW`KDB3
 !s100 c7BBTbVM3OIb@2WGYW>K_1
-R10
+R9
 33
-R22
+R10
 !i10b 1
-R23
+R11
 Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/Adder.vhd|
 Z32 !s107 ../SourceCode/Adder.vhd|
 !i113 1
+R14
 R15
-R16
 Artl
-R20
-R21
+R2
+R3
 R4
 R5
 Z33 DEx4 work 9 fulladder 0 22 bK;YE[2CcD<`BWPgW`KDB3
@@ -138,174 +135,172 @@ l44
 L43
 V]UOBI>GmOX3BGzLQc0l4J1
 !s100 Y^CRLQmWN4j[Bl8<jm>Bh3
-R10
+R9
 33
-R22
+R10
 !i10b 1
-R23
+R11
 R31
 R32
 !i113 1
+R14
 R15
-R16
 Cfuncausim
 Z34 eTbArithUnit
 Z35 abehavioural
-R1
 R2
 R3
-R6
 R17
 Z36 DAx4 work 11 tbarithunit 11 behavioural 22 VY<aabdg2gPM0UiDnUcmT3
-R19
+R1
 R4
 R5
 Z37 DEx4 work 11 tbarithunit 0 22 H?jnlGf<UDYSYk@9Scd433
-R27
-R7
+R0
+R6
 Z38 8ConfigExU.vhd
 Z39 FConfigExU.vhd
 l0
 L15
 V`<aJ^VfHk75_i^^[9k2ZV0
 !s100 ?D3XPUQgkHV;RRBPGZ^T;3
-R10
+R9
 33
-Z40 !s110 1585888026
+R10
 !i10b 1
-Z41 !s108 1585888026.000000
-Z42 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ConfigExU.vhd|
-Z43 !s107 ConfigExU.vhd|
+R11
+Z40 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ConfigExU.vhd|
+Z41 !s107 ConfigExU.vhd|
 !i113 1
+R14
 R15
-R16
 Cfunclusim
-Z44 eTbLogicUnit
+Z42 eTbLogicUnit
 R35
-R1
-R2
-R3
-R6
-Z45 DEx4 work 9 logicunit 0 22 UN3o;TM`A1[DM@kj;_[BX1
-Z46 DAx4 work 11 tblogicunit 11 behavioural 22 HUeAiGW2Qh9JTcLaXDng61
+R18
 R19
+R20
+R21
+Z43 DEx4 work 9 logicunit 0 22 UN3o;TM`A1[DM@kj;_[BX1
+Z44 DAx4 work 11 tblogicunit 11 behavioural 22 HUeAiGW2Qh9JTcLaXDng61
+R1
 R4
 R5
-Z47 DEx4 work 11 tblogicunit 0 22 :aF1E7<jIb_KJZ4nYJZ[i3
-R27
-R7
+Z45 DEx4 work 11 tblogicunit 0 22 :aF1E7<jIb_KJZ4nYJZ[i3
+R0
+R6
 R38
 R39
 l0
 L1
 VUz6o]e?NCzlMVDRM7DK1X3
 !s100 1I?ZbB3Lg;edQG`Y4C?z70
-R10
+R9
 33
-R40
+R10
 !i10b 1
+R11
+R40
 R41
-R42
-R43
 !i113 1
+R14
 R15
-R16
 Ehard_block
-R0
-R1
-R2
-R3
+R27
+R18
+R19
+R20
 R4
 R5
+R21
 R6
-R7
-R8
-R9
+R28
+R26
 l0
 L34
 VXT=F7PA`1j][[eM]MD0KO0
 !s100 A`ID_i56<Ua56=ZD=[EG=2
-R10
+R9
 33
-R11
+R22
 !i10b 1
-R12
-R13
-R14
+R23
+R24
+R25
 !i113 1
+R14
 R15
-R16
 Astructure
-R1
-R2
-R3
+R18
+R19
+R20
 R4
 R5
-R6
+R21
 DEx4 work 10 hard_block 0 22 XT=F7PA`1j][[eM]MD0KO0
 l64
 L50
 VBGeSh>j:nnDYQGNW2@jBJ2
 !s100 2S?JL;LJ@<3:BHXTNcXS]3
-R10
+R9
 33
-R11
+R22
 !i10b 1
-R12
-R13
-R14
+R23
+R24
+R25
 !i113 1
+R14
 R15
-R16
 Elogicunit
-Z48 w1585884593
-R1
-R2
-R3
+Z46 w1585884593
+R18
+R19
+R20
 R4
 R5
+R21
 R6
-R7
-Z49 8ModelSim/LogicUnit.vho
-Z50 FModelSim/LogicUnit.vho
+Z47 8ModelSim/LogicUnit.vho
+Z48 FModelSim/LogicUnit.vho
 l0
 L77
 VUN3o;TM`A1[DM@kj;_[BX1
 !s100 573^^6ifcm8TFGS4:74Vz3
-R10
+R9
 33
-Z51 !s110 1585885013
+Z49 !s110 1585885013
 !i10b 1
-Z52 !s108 1585885012.000000
-Z53 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ModelSim/LogicUnit.vho|
-Z54 !s107 ModelSim/LogicUnit.vho|
+Z50 !s108 1585885012.000000
+Z51 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|ModelSim/LogicUnit.vho|
+Z52 !s107 ModelSim/LogicUnit.vho|
 !i113 1
+R14
 R15
-R16
 Astructure
-R1
-R2
-R3
+R18
+R19
+R20
 R4
 R5
-R6
-R45
+R21
+R43
 l563
 L283
 VdI;k4D@bNZR8D^WPJZ;i`2
 !s100 d;Wcdg;>[18RGdS^WD2452
-R10
+R9
 33
-R51
+R49
 !i10b 1
+R50
+R51
 R52
-R53
-R54
 !i113 1
+R14
 R15
-R16
 Artl
-R19
+R1
 R4
 R5
 DEx4 work 9 logicunit 0 22 SeY2ioNS1@1ROz7J?G8IO3
@@ -313,7 +308,7 @@ l14
 L12
 VnWYcC1_BoZ<Vf5:HAk5YE1
 !s100 06@ZKCzbJDcQjQ69O2]V12
-R10
+R9
 33
 !s110 1585884157
 !i10b 1
@@ -321,79 +316,79 @@ R10
 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|../SourceCode/LogicUnit.vhd|
 !s107 ../SourceCode/LogicUnit.vhd|
 !i113 1
+R14
 R15
-R16
 F../SourceCode/LogicUnit.vhd
-R27
+Z53 w1585870437
 8../SourceCode/LogicUnit.vhd
 Erippleadder
-R27
-R20
-R21
+R0
+R2
+R3
 R4
 R5
-R7
+R6
 R29
 R30
 l0
 L6
 VDTLJiGUXEd44J`eQZ:9HG0
 !s100 eE?4dJIU:[FOF[DP<FE5J2
-R10
+R9
 33
-R22
+R10
 !i10b 1
-R23
+R11
 R31
 R32
 !i113 1
+R14
 R15
-R16
 Artl
 R33
-R20
-R21
+R2
+R3
 R4
 R5
-R18
+R16
 l32
 L30
 VVIzPj529AH1U``c;T6HaA0
 !s100 L_dL8lMjmWS6T0i=i:6Y:0
-R10
+R9
 33
-R22
+R10
 !i10b 1
-R23
+R11
 R31
 R32
 !i113 1
+R14
 R15
-R16
 Etbarithunit
-R27
-R19
+R0
+R1
 R4
 R5
-R7
-Z55 8TBArithUnit.vhd
-Z56 FTBArithUnit.vhd
+R6
+Z54 8TBArithUnit.vhd
+Z55 FTBArithUnit.vhd
 l0
 L7
 VH?jnlGf<UDYSYk@9Scd433
 !s100 nV1D7fnIP>bl9@SHD^z]H1
-R10
+R9
 33
-R40
+R10
 !i10b 1
-R41
-Z57 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|TBArithUnit.vhd|
-Z58 !s107 TBArithUnit.vhd|
+R11
+Z56 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|TBArithUnit.vhd|
+Z57 !s107 TBArithUnit.vhd|
 !i113 1
+R14
 R15
-R16
 Abehavioural
-R19
+R1
 R4
 R5
 R37
@@ -401,116 +396,114 @@ l35
 L11
 VVY<aabdg2gPM0UiDnUcmT3
 !s100 ?6lWP>bBzdjVm`HZSX8U62
-R10
+R9
 33
-R40
+R10
 !i10b 1
-R41
+R11
+R56
 R57
-R58
 !i113 1
+R14
 R15
-R16
 Etblogicunit
-R27
-R19
+R53
+R1
 R4
 R5
-R7
-Z59 8TBLogicUnit.vhd
-Z60 FTBLogicUnit.vhd
+R6
+Z58 8TBLogicUnit.vhd
+Z59 FTBLogicUnit.vhd
 l0
 L7
 V:aF1E7<jIb_KJZ4nYJZ[i3
 !s100 1CFj:XSGgajROW^G:?_><3
-R10
+R9
 33
-R51
+R49
 !i10b 1
-Z61 !s108 1585885013.000000
-Z62 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|TBLogicUnit.vhd|
-Z63 !s107 TBLogicUnit.vhd|
+Z60 !s108 1585885013.000000
+Z61 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=time,-cmd,msg|TBLogicUnit.vhd|
+Z62 !s107 TBLogicUnit.vhd|
 !i113 1
+R14
 R15
-R16
 Abehavioural
-R19
+R1
 R4
 R5
-R47
+R45
 l46
 L11
 VHUeAiGW2Qh9JTcLaXDng61
 !s100 37^bbYcBSd`8Q]bJE`n223
-R10
+R9
 33
-R51
+R49
 !i10b 1
+R60
 R61
 R62
-R63
 !i113 1
+R14
 R15
-R16
 Ctimeausim
 R34
 R35
-R1
 R2
 R3
-R6
 R17
 R36
-R19
+R1
 R4
 R5
 R37
-R27
-R7
+R0
+R6
 R38
 R39
 l0
 L22
 Vc@j0<]>]2McV@A_In0?[D3
 !s100 R2Kc^HfY?<C>3UmQcD?gm0
-R10
+R9
 33
-R40
+R10
 !i10b 1
+R11
+R40
 R41
-R42
-R43
 !i113 1
+R14
 R15
-R16
 Ctimelusim
-R44
+R42
 R35
-R1
-R2
-R3
-R6
-R45
-R46
+R18
 R19
+R20
+R21
+R43
+R44
+R1
 R4
 R5
-R47
-R27
-R7
+R45
+R0
+R6
 R38
 R39
 l0
 L8
 Vj`:ZLjB?3a?cGJhV;ID502
 !s100 YGhEgiCJcm@dDJh:JeAi`1
-R10
+R9
 33
-R40
+R10
 !i10b 1
+R11
+R40
 R41
-R42
-R43
 !i113 1
+R14
 R15
-R16
