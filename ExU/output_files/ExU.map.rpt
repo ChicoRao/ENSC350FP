@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ExU
-Sun Apr 05 16:07:12 2020
+Sun Apr 05 21:27:40 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 05 16:07:12 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 05 21:27:39 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ExU                                         ;
 ; Top-level Entity Name              ; ArithUnit                                   ;
@@ -321,15 +321,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 200                         ;
-; cycloneiii_lcell_comb ; 248                         ;
-;     normal            ; 248                         ;
-;         1 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 249                         ;
+;     normal            ; 249                         ;
+;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 63                          ;
 ;         3 data inputs ; 31                          ;
 ;         4 data inputs ; 153                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 66.00                       ;
-; Average LUT depth     ; 41.74                       ;
+; Max LUT depth         ; 67.00                       ;
+; Average LUT depth     ; 42.70                       ;
 +-----------------------+-----------------------------+
 
 
@@ -348,13 +348,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Apr 05 16:06:56 2020
+    Info: Processing started: Sun Apr 05 21:27:22 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ExU -c ExU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/arithunit.vhd
-    Info (12022): Found design unit 1: ArithUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 18
-    Info (12023): Found entity 1: ArithUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 7
+    Info (12022): Found design unit 1: ArithUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
+    Info (12023): Found entity 1: ArithUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
 Info (12021): Found 4 design units, including 2 entities, in source file sourcecode/adder.vhd
     Info (12022): Found design unit 1: rippleadder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 30
     Info (12022): Found design unit 2: FullAdder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 43
@@ -364,7 +364,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file sourcec
     Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
     Info (12023): Found entity 1: LogicUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
 Info (12127): Elaborating entity "ArithUnit" for the top level hierarchy
-Info (12128): Elaborating entity "rippleadder" for hierarchy "rippleadder:add" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 40
+Info (12128): Elaborating entity "rippleadder" for hierarchy "rippleadder:add" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 41
 Info (12128): Elaborating entity "FullAdder" for hierarchy "rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 37
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -374,9 +374,9 @@ Info (21057): Implemented 447 device resources after synthesis - the final resou
     Info (21059): Implemented 69 output pins
     Info (21061): Implemented 247 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4797 megabytes
-    Info: Processing ended: Sun Apr 05 16:07:12 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 4795 megabytes
+    Info: Processing ended: Sun Apr 05 21:27:40 2020
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:33
 
 

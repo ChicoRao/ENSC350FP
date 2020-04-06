@@ -52,8 +52,6 @@ begin
 	signExt(31 downto 0) <= s1(31 downto 0);
   	signExt(N-1 downto 32) <= (N-1 downto 32 => s1(31));
 
-	signExt: (63 to 32)(s1)
-
 	output <= signExt when ExtWord = '1' else
 	      	s1;
 
