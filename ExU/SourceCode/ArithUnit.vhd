@@ -42,7 +42,6 @@ begin
 	Cout <= cout1;
 
 	--NOR
-	--Zero <= '1' when s1 = x"0000000000000000" else '0';
 	Zero <= NOR_REDUCE(s1);
 	
 	--Overflow
