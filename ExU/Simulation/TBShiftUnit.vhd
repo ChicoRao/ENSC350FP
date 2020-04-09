@@ -4,11 +4,12 @@ Use std.TEXTIO.all;
 Use ieee.numeric_std.all;
 
 
-Entity TbArithUnit is
+Entity TbShiftUnit is
 Generic ( N : natural := 64 );
-End Entity TbArithUnit;
+End Entity TbShiftUnit;
 
-Architecture behavioural of TbArithUnit is
+Architecture behavioural of TbShiftUnit is
+	Constant TestVectorFile : string := "SRL32Unit00.tvs";
 	Constant ClockPeriod : time := 2 ns;
 	Constant ResetPeriod : time := 5 ns;
 	Constant PreStimTime : time := 1 ns;
@@ -17,17 +18,17 @@ Architecture behavioural of TbArithUnit is
 	Signal Sstable, Squiet : boolean := false;
 
 	Signal Clock, Resetn : std_logic := '0';
-	Signal A, B, Y, TbY : std_logic_vector( N-1 downto 0 );
-	Signal NotA, AddnSub, ExtWord : std_logic;
-	Signal Cout, Ovfl, Zero, AltB, AltBu : std_logic;
--- use a component for the DUT. Use the same Entityname and Port Spec
+	Signal A, B, C, Y, TbY : std_logic_vector( N-1 downto 0 );
+	Signal	ShiftFN : std_logic_vector( 1 downto 0 );
+	Signal	ExtWord : std_logic;
+-- use a component for the DUT. Use the same Entity name and Port Spec
 -- use default binding rules.
-	Component ArithUnit is
-		Port ( A, B: in std_logic_vector( N-1 downto 0 );
+	Component ShiftUnit is
+		Port ( A, B, C : in std_logic_vector( N-1 downto 0 );
 				Y	: out std_logic_vector( N-1 downto 0 );
-				NotA, AddnSub, ExtWord : in std_logic;
-				Cout, Ovfl, Zero, AltB, AltBu : out std_logic );
-	End Component ArithUnit;
+				ShiftFN : in std_logic_vector( 1 downto 0 );
+				ExtWord : in std_logic );
+	End Component ShiftUnit;
 	Signal MeasurementIndex : Integer := 0;
 	File   VectorFile : text; 
 
@@ -39,10 +40,9 @@ Begin
 	Sstable <= Y'stable(PostStimTime);
 	Squiet <= Y'quiet(PostStimTime);
 -- Instantiate the component	
-DUT:	Component ArithUnit generic map( N => N )
-		port map ( A=>A, B=>B, Y=>Y,
-				NotA=>NotA, AddnSub=>AddnSub, ExtWord=>ExtWord,
-				Cout=>Cout, Ovfl=>Ovfl, Zero=>Zero, AltB=>AltB, AltBu=>AltBu );
+DUT:	Component ShiftUnit generic map( N => N )
+		port map ( A=>A, B=>B, C=>C, Y=>Y,
+				ShiftFN=>ShiftFN, ExtWord=>ExtWord );
 -- *****************************************************************************
 -- Now the main process for generating stimulii and response.	
 -- *****************************************************************************
@@ -51,21 +51,22 @@ STIM:	Process is
 			Variable ResultV : std_logic := 'X';
 -- Variables used for File I/O.
 			Variable LineBuffer : line;
-			Variable Avar, Bvar, YVar : std_logic_vector( N-1 downto 0 );
-			Variable NotAvar, AddnSubvar, ExtWordvar : std_logic;
-			Variable Coutvar, Ovflvar, Zerovar, AltBvar, AltBuvar : std_logic;
+			Variable Avar, Bvar, Cvar, Yvar : std_logic_vector( N-1 downto 0 );
+			Variable ShiftFNvar : std_logic_vector( 1 downto 0 );
+			Variable ExtWordvar : std_logic;
 			
 		Begin
 			Wait until Resetn = '1';
 			Wait for 10 ns;
-			file_open( VectorFile, "ArithUnit01.tvs", read_mode );
+			file_open( VectorFile, TestVectorFile, read_mode );
+			report "Using TestVectors from file " & TestVectorFile;
 			while not endfile( VectorFile ) loop
 -- Preceed the measurement with "Forced Unknown", 'X'
 				MeasurementIndex <= MeasurementIndex + 1;
 				A <= (others => 'X');
 				B <= (others => 'X');
-				NotA <= 'X';
-				AddnSub <= 'X';
+				C <= (others => 'X');
+				ShiftFN <= "XX";
 				ExtWord <= 'X';
 -- End of Control Signals
 				ResultV := 'X';
@@ -77,23 +78,19 @@ STIM:	Process is
 				readline( VectorFile, LineBuffer );
 				hread( LineBuffer, Avar );
 				hread( LineBuffer, Bvar );
-				read( LineBuffer, NotAvar );
-				read( LineBuffer, AddnSubvar );
+				hread( LineBuffer, Cvar );
+				read( LineBuffer, ShiftFNvar(1) );
+				read( LineBuffer, ShiftFNvar(0) );
 				read( LineBuffer, ExtWordvar );
 				hread( LineBuffer, Yvar );
-				read( LineBuffer, Coutvar );
-				read( LineBuffer, Ovflvar );
-				read( LineBuffer, Zerovar );
-				read( LineBuffer, AltBvar );
-				read( LineBuffer, AltBuvar );
 
 -- Assign input stimulii variables to the signals.
 				A <= Avar;
 				B <= Bvar;
+				C <= Cvar;
 				TbY <= Yvar;
 
-				NotA <= NotAvar;
-				AddnSub <= AddnSubvar;
+				ShiftFN <= ShiftFNvar;
 				ExtWord <= ExtWordvar;
 -- Assign the known status flags to Testbench signals (not really necessary) 
 				
@@ -109,51 +106,6 @@ STIM:	Process is
 						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
 						"  Y = " & to_hstring(Y) & CR &
 						"TbY = " & to_hstring(TbY)
-						Severity error;
-				End If;
-
-				If Cout /= Coutvar then
-					ResultV := '0';			
-					Assert Cout = Coutvar
-						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
-						"  Cout = " & to_string(Cout) & CR &
-						"CoutVar = " & to_string(Coutvar)
-						Severity error;
-				End If;
-
-				If Ovfl /= Ovflvar then
-					ResultV := '0';			
-					Assert Ovfl = Ovflvar
-						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
-						"  Ovfl = " & to_string(Ovfl) & CR &
-						"OvflVar = " & to_string(Ovflvar)
-						Severity error;
-				End If;
-
-				If Zero /= Zerovar then
-					ResultV := '0';			
-					Assert Zero = Zerovar
-						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
-						"  Zero = " & to_string(Zero) & CR &
-						"ZeroVar = " & to_string(Zerovar)
-						Severity error;
-				End If;
-				
-				If AltB /= AltBvar then
-					ResultV := '0';			
-					Assert AltB = AltBvar
-						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
-						"  AltB = " & to_string(AltB) & CR &
-						"AltBVar = " & to_string(AltBvar)
-						Severity error;
-				End If;
-
-				If AltBu /= AltBuvar then
-					ResultV := '0';			
-					Assert AltBu = AltBuvar
-						Report "Measurement Index := " & to_string(MeasurementIndex) & CR &
-						"  AltBu = " & to_string(AltBu) & CR &
-						"AltBuVar = " & to_string(AltBuvar)
 						Severity error;
 				End If;
 
