@@ -61,6 +61,6 @@ begin
 	
 	--AltB and AltBu
 	AltBu <= NOT cout1;
-	AltB <=  s1(N-1) XOR internalOvfl;
+	AltB <=  s1 XOR internalOvfl;
 	
 end architecture rtl;
