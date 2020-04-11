@@ -15,6 +15,7 @@ Architecture rtl of SRA64 is
 	signal Y1, Y2, Y3 : std_logic_vector(N-1 downto 0);
 	signal signExt: std_logic_vector(N-1 downto 0);
 	signal shiftCountBits: std_logic_vector(5 downto 0);
+	--signal q1: std_logic_vector(N-1-to_integer(ShiftCount) downto 0);
 Begin
 	shiftCountBits <= std_logic_vector(ShiftCount);
 	
@@ -36,8 +37,6 @@ Begin
 		"000" & Y2(N-1 downto 3) when shiftCountBits(1 downto 0) = "11" else 
 		Y2;
 
-	signExt(N-1-to_integer(ShiftCount) downto 0) <= Y3(N-1-to_integer(ShiftCount) downto 0); 
-	signExt(N-1 downto N-to_integer(ShiftCount)) <= (N-1 downto N-to_integer(ShiftCount) => Y3(N-to_integer(ShiftCount)));
-	Y <= signExt;
+	Y <= std_logic_vector(resize(signed(Y3(N-1-to_integer(ShiftCount) downto 0)),Y'length));
 
 End Architecture rtl;
