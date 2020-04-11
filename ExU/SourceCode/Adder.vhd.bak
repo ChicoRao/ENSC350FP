@@ -18,6 +18,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity FullAdder is
+     
      port (
           X, Y     :     in     std_logic;
           Cin      :     in     std_logic;
