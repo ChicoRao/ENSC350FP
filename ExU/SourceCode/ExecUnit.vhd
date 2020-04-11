@@ -17,3 +17,25 @@ Port ( A, B : in std_logic_vector( N-1 downto 0 );
 	Zero, AltB, AltBu : out std_logic
 	);
 End Entity ExecUnit;
+
+architecture rtl of ExecUnit is 
+	Signal	addY, YArith, YLogic, YShift, AltB64, AltBu64 : std_logic_vector( N-1 downto 0 );
+	Signal	cout, ovfl, ialtb, ialtbu: std_logic;
+
+begin
+	ArithUnit: entity Work.ArithUnit port map ( A, B, addY, YArith, NotA, AddnSub, ExtWord, cout, ovfl, Zero, ialtb, ialtbu);
+	LogicUnit: entity Work.LogicUnit port map ( A, B, YLogic, LogicFN);
+	ShiftUnit: entity Work.ShiftUnit port map ( A, B, YArith, YShift, ShiftFN, ExtWord);
+
+	AltB <= ialtb;
+	AltBu <= ialtbu;
+
+	AltB64 <= x"000000000000000" & "000" & ialtb;
+	AltBu64 <= x"000000000000000" & "000" & ialtbu;
+
+	Y <= 	AltB64 when FuncClass = "01" else 
+		YShift when FuncClass = "10" else 
+		YLogic when FuncClass = "11" else
+		AltBu64;
+
+end architecture rtl;
