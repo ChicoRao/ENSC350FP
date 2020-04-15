@@ -1,11 +1,11 @@
-# End time: 19:27:31 on Apr 14,2020, Elapsed time: 0:24:11
-# Errors: 0, Warnings: 3
+# End time: 20:44:18 on Apr 14,2020, Elapsed time: 0:08:58
+# Errors: 0, Warnings: 8541
 #----------------------------------------------------------------------------------------------------------
 # compile
 #----------------------------------------------------------------------------------------------------------
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg ModelSim/ExecUnit.vho
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:27:31 on Apr 14,2020
+# Start time: 20:44:18 on Apr 14,2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -17,24 +17,24 @@
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity ExecUnit
 # -- Compiling architecture structure of ExecUnit
-# End time: 19:27:32 on Apr 14,2020, Elapsed time: 0:00:01
+# End time: 20:44:19 on Apr 14,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg TBExecUnit.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:27:32 on Apr 14,2020
+# Start time: 20:44:19 on Apr 14,2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TbExecUnit
 # -- Compiling architecture behavioural of TbExecUnit
-# End time: 19:27:32 on Apr 14,2020, Elapsed time: 0:00:00
+# End time: 20:44:19 on Apr 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg ConfigExU.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:27:32 on Apr 14,2020
+# Start time: 20:44:19 on Apr 14,2020
 # -- Loading package STANDARD
 # -- Compiling configuration FuncLUSim
 # -- Loading package TEXTIO
@@ -50,10 +50,10 @@
 # -- Compiling configuration FuncAUSim
 # -- Loading entity TbArithUnit
 # -- Loading architecture behavioural of TbArithUnit
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneive_atom_pack
-# -- Loading package cycloneive_components
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package ATTRIBUTES
+# -- Loading package std_logic_misc
 # -- Loading entity ArithUnit
 # -- Compiling configuration TimeAUSim
 # -- Loading entity TbArithUnit
@@ -62,6 +62,7 @@
 # -- Compiling configuration FuncSUSim
 # -- Loading entity TbShiftUnit
 # -- Loading architecture behavioural of TbShiftUnit
+# -- Loading package MATH_REAL
 # -- Loading entity ShiftUnit
 # -- Compiling configuration TimeSUSim
 # -- Loading entity TbShiftUnit
@@ -70,19 +71,23 @@
 # -- Compiling configuration FuncXUSim
 # -- Loading entity TbExecUnit
 # -- Loading architecture behavioural of TbExecUnit
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
 # -- Loading entity ExecUnit
 # -- Compiling configuration TimeXUSim
 # -- Loading entity TbExecUnit
 # -- Loading architecture behavioural of TbExecUnit
 # -- Loading entity ExecUnit
-# End time: 19:27:32 on Apr 14,2020, Elapsed time: 0:00:00
+# End time: 20:44:19 on Apr 14,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 #----------------------------------------------------------------------------------------------------------
 # Start the simulation
 #----------------------------------------------------------------------------------------------------------
 # vsim -t 100ps -gui work.TimeXUSim -sdftyp ../DUT=ModelSim/ExecUnit.sdo
 # vsim -t 100ps -gui work.TimeXUSim -sdftyp ../DUT=ModelSim/ExecUnit.sdo 
-# Start time: 19:27:32 on Apr 14,2020
+# Start time: 20:44:19 on Apr 14,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -107,7 +112,6 @@
 # Expect performance to be adversely affected.
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /tbexecunit File: TBExecUnit.vhd
-# WARNING: No extended dataflow license exists
 # transcript off
 #----------------------------------------------------------------------------------------------------------
 # Simulation Run
