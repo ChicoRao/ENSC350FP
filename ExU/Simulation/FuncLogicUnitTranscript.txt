@@ -21,7 +21,7 @@
 # 
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg ConfigExU.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:21:21 on Apr 09,2020
+# Start time: 16:06:56 on Apr 14,2020
 # -- Loading package STANDARD
 # -- Compiling configuration FuncLUSim
 # -- Loading package TEXTIO
@@ -46,14 +46,31 @@
 # -- Loading entity TbArithUnit
 # -- Loading architecture behavioural of TbArithUnit
 # -- Loading entity ArithUnit
-# End time: 23:21:21 on Apr 09,2020, Elapsed time: 0:00:00
+# -- Compiling configuration FuncSUSim
+# -- Loading entity TbShiftUnit
+# -- Loading architecture behavioural of TbShiftUnit
+# -- Loading package MATH_REAL
+# -- Loading entity ShiftUnit
+# -- Compiling configuration TimeSUSim
+# -- Loading entity TbShiftUnit
+# -- Loading architecture behavioural of TbShiftUnit
+# -- Loading entity ShiftUnit
+# -- Compiling configuration FuncXUSim
+# -- Loading entity TbExecUnit
+# -- Loading architecture behavioural of TbExecUnit
+# -- Loading entity ExecUnit
+# -- Compiling configuration TimeXUSim
+# -- Loading entity TbExecUnit
+# -- Loading architecture behavioural of TbExecUnit
+# -- Loading entity ExecUnit
+# End time: 16:06:57 on Apr 14,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 #----------------------------------------------------------------------------------------------------------
 # Start the simulation
 #----------------------------------------------------------------------------------------------------------
 # vsim -gui work.FuncLUSim -t 100ps
 # vsim -gui work.FuncLUSim -t 100ps 
-# Start time: 23:21:21 on Apr 09,2020
+# Start time: 16:06:58 on Apr 14,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -61,6 +78,7 @@
 # Loading work.funclusim
 # Loading work.tblogicunit(behavioural)
 # Loading work.logicunit(rtl)
+# WARNING: No extended dataflow license exists
 # transcript off
 #----------------------------------------------------------------------------------------------------------
 # Simulation Run

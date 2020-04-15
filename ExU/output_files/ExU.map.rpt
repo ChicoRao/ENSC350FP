@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ExU
-Fri Apr 10 23:45:59 2020
+Tue Apr 14 17:30:36 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |SLL64
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +44,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Apr 10 23:45:59 2020           ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 14 17:30:36 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ExU                                         ;
-; Top-level Entity Name              ; ExecUnit                                    ;
+; Top-level Entity Name              ; SLL64                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 374                                         ;
+;     Total combinational functions  ; 374                                         ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 134                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -59,7 +67,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; ExecUnit           ; ExU                ;
+; Top-level entity name                                            ; SLL64              ; ExU                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -144,8 +152,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -155,61 +163,169 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; SourceCode/SLL64.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 374                 ;
+;                                             ;                     ;
+; Total combinational functions               ; 374                 ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 214                 ;
+;     -- 3 input functions                    ; 148                 ;
+;     -- <=2 input functions                  ; 12                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 374                 ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers                             ; 0                   ;
+;     -- Dedicated logic registers            ; 0                   ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 134                 ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; ShiftCount[0]~input ;
+; Maximum fan-out                             ; 75                  ;
+; Total fan-out                               ; 1522                ;
+; Average fan-out                             ; 2.37                ;
++---------------------------------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |SLL64                     ; 374 (374)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 134  ; 0            ; |SLL64              ; SLL64       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[7]               ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SLL64|Y1[23]              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SLL64|Y1[52]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[4]               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[61]              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |SLL64 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; N              ; 64    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 134                         ;
+; cycloneiii_lcell_comb ; 374                         ;
+;     normal            ; 374                         ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 148                         ;
+;         4 data inputs ; 214                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 5.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 10 23:45:44 2020
+    Info: Processing started: Tue Apr 14 17:30:26 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ExU -c ExU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/srl64.vhd
-    Info (12022): Found design unit 1: SRL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
-    Info (12023): Found entity 1: SRL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
+    Info (12022): Found design unit 1: SRL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
+    Info (12023): Found entity 1: SRL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sra64.vhd
-    Info (12022): Found design unit 1: SRA64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
-    Info (12023): Found entity 1: SRA64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
+    Info (12022): Found design unit 1: SRA64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
+    Info (12023): Found entity 1: SRA64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sll64.vhd
-    Info (12022): Found design unit 1: SLL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
-    Info (12023): Found entity 1: SLL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
+    Info (12022): Found design unit 1: SLL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
+    Info (12023): Found entity 1: SLL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/shiftunit.vhd
-    Info (12022): Found design unit 1: ShiftUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
-    Info (12023): Found entity 1: ShiftUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
+    Info (12022): Found design unit 1: ShiftUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
+    Info (12023): Found entity 1: ShiftUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/execunit.vhd
-    Info (12022): Found design unit 1: ExecUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
-    Info (12023): Found entity 1: ExecUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ExecUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
+    Info (12023): Found entity 1: ExecUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/arithunit.vhd
-    Info (12022): Found design unit 1: ArithUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
-    Info (12023): Found entity 1: ArithUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ArithUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
+    Info (12023): Found entity 1: ArithUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
 Info (12021): Found 4 design units, including 2 entities, in source file sourcecode/adder.vhd
-    Info (12022): Found design unit 1: rippleadder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
-    Info (12022): Found design unit 2: FullAdder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
-    Info (12023): Found entity 1: rippleadder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
-    Info (12023): Found entity 2: FullAdder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
+    Info (12022): Found design unit 1: rippleadder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
+    Info (12022): Found design unit 2: FullAdder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
+    Info (12023): Found entity 1: rippleadder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
+    Info (12023): Found entity 2: FullAdder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/logicunit.vhd
-    Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
-    Info (12023): Found entity 1: LogicUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
-Info (12127): Elaborating entity "ExecUnit" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(22): object "addY" assigned a value but never read File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 22
-Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(23): object "cout" assigned a value but never read File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 23
-Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(23): object "ovfl" assigned a value but never read File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 23
-Info (12128): Elaborating entity "ArithUnit" for hierarchy "ArithUnit:ArithUnit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 26
-Info (12128): Elaborating entity "rippleadder" for hierarchy "ArithUnit:ArithUnit|rippleadder:add" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 41
-Info (12128): Elaborating entity "FullAdder" for hierarchy "ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 36
-Info (12128): Elaborating entity "LogicUnit" for hierarchy "LogicUnit:LogicUnit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 27
-Info (12128): Elaborating entity "ShiftUnit" for hierarchy "ShiftUnit:ShiftUnit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 28
-Info (12128): Elaborating entity "SLL64" for hierarchy "ShiftUnit:ShiftUnit|SLL64:SLLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 32
-Info (12128): Elaborating entity "SRL64" for hierarchy "ShiftUnit:ShiftUnit|SRL64:SRLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 33
-Info (12128): Elaborating entity "SRA64" for hierarchy "ShiftUnit:ShiftUnit|SRA64:SRAcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 34
-Error (10779): VHDL error at SRA64.vhd(39): expression is not constant File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 39
-Error (10657): VHDL Subprogram error at SRA64.vhd(39):  failed to elaborate call to subprogram "RESIZE" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 39
-Error (12152): Can't elaborate user hierarchy "ShiftUnit:ShiftUnit|SRA64:SRAcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 34
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
-    Error: Peak virtual memory: 4786 megabytes
-    Error: Processing ended: Fri Apr 10 23:45:59 2020
-    Error: Elapsed time: 00:00:15
-    Error: Total CPU time (on all processors): 00:00:33
+    Info (12022): Found design unit 1: LogicUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
+    Info (12023): Found entity 1: LogicUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
+Info (12127): Elaborating entity "SLL64" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 508 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 70 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 374 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Tue Apr 14 17:30:36 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 
