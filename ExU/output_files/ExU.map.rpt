@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ExU
-Tue Apr 14 17:30:36 2020
+Tue Apr 14 18:20:43 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,10 +15,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |SLL64
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |ShiftUnit
+ 11. Parameter Settings for User Entity Instance: SLL64:SLLcircuit
+ 12. Parameter Settings for User Entity Instance: SRL64:SRLcircuit
+ 13. Parameter Settings for User Entity Instance: SRA64:SRAcircuit
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 14 17:30:36 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 14 18:20:42 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ExU                                         ;
-; Top-level Entity Name              ; SLL64                                       ;
+; Top-level Entity Name              ; ShiftUnit                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 374                                         ;
-;     Total combinational functions  ; 374                                         ;
+; Total logic elements               ; 1,370                                       ;
+;     Total combinational functions  ; 1,370                                       ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 134                                         ;
+; Total pins                         ; 259                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +70,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; SLL64              ; ExU                ;
+; Top-level entity name                                            ; ShiftUnit          ; ExU                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -152,65 +155,74 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                  ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
-; SourceCode/SLL64.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; SourceCode/SRL64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd     ;         ;
+; SourceCode/SRA64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd     ;         ;
+; SourceCode/SLL64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd     ;         ;
+; SourceCode/ShiftUnit.vhd         ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 374                 ;
-;                                             ;                     ;
-; Total combinational functions               ; 374                 ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 214                 ;
-;     -- 3 input functions                    ; 148                 ;
-;     -- <=2 input functions                  ; 12                  ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 374                 ;
-;     -- arithmetic mode                      ; 0                   ;
-;                                             ;                     ;
-; Total registers                             ; 0                   ;
-;     -- Dedicated logic registers            ; 0                   ;
-;     -- I/O registers                        ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 134                 ;
-;                                             ;                     ;
-; Embedded Multiplier 9-bit elements          ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; ShiftCount[0]~input ;
-; Maximum fan-out                             ; 75                  ;
-; Total fan-out                               ; 1522                ;
-; Average fan-out                             ; 2.37                ;
-+---------------------------------------------+---------------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 1,370      ;
+;                                             ;            ;
+; Total combinational functions               ; 1370       ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 958        ;
+;     -- 3 input functions                    ; 377        ;
+;     -- <=2 input functions                  ; 35         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 1370       ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 259        ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; B[0]~input ;
+; Maximum fan-out                             ; 234        ;
+; Total fan-out                               ; 5356       ;
+; Average fan-out                             ; 2.84       ;
++---------------------------------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |SLL64                     ; 374 (374)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 134  ; 0            ; |SLL64              ; SLL64       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
+; |ShiftUnit                 ; 1370 (559)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 259  ; 0            ; |ShiftUnit                  ; ShiftUnit   ; work         ;
+;    |SLL64:SLLcircuit|      ; 266 (266)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SLL64:SLLcircuit ; SLL64       ; work         ;
+;    |SRA64:SRAcircuit|      ; 251 (251)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SRA64:SRAcircuit ; SRA64       ; work         ;
+;    |SRL64:SRLcircuit|      ; 294 (294)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SRL64:SRLcircuit ; SRL64       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,26 +241,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[7]               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SLL64|Y1[23]              ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SLL64|Y1[52]              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[4]               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SLL64|Y2[61]              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y2[6]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y2[54] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y1[18] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y1[55] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y1[26] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y2[58] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRL64:SRLcircuit|Y2[2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y1[46] ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|Y                       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRL64:SRLcircuit|Y2[2]  ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |ShiftUnit|seA_Y3[20]              ;
+; 12:1               ; 27 bits   ; 216 LEs       ; 216 LEs              ; 0 LEs                  ; No         ; |ShiftUnit|Y                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |SLL64 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; N              ; 64    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ShiftUnit ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 64    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SLL64:SLLcircuit ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 64    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SRL64:SRLcircuit ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 64    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SRA64:SRAcircuit ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 64    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -257,15 +306,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 134                         ;
-; cycloneiii_lcell_comb ; 374                         ;
-;     normal            ; 374                         ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 148                         ;
-;         4 data inputs ; 214                         ;
+; boundary_port         ; 259                         ;
+; cycloneiii_lcell_comb ; 1370                        ;
+;     normal            ; 1370                        ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 377                         ;
+;         4 data inputs ; 958                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 5.22                        ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 8.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,7 +323,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -284,48 +333,110 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Apr 14 17:30:26 2020
+    Info: Processing started: Tue Apr 14 18:20:21 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ExU -c ExU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/srl64.vhd
-    Info (12022): Found design unit 1: SRL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
-    Info (12023): Found entity 1: SRL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
+    Info (12022): Found design unit 1: SRL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
+    Info (12023): Found entity 1: SRL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sra64.vhd
-    Info (12022): Found design unit 1: SRA64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
-    Info (12023): Found entity 1: SRA64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
+    Info (12022): Found design unit 1: SRA64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
+    Info (12023): Found entity 1: SRA64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sll64.vhd
-    Info (12022): Found design unit 1: SLL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
-    Info (12023): Found entity 1: SLL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
+    Info (12022): Found design unit 1: SLL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
+    Info (12023): Found entity 1: SLL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/shiftunit.vhd
-    Info (12022): Found design unit 1: ShiftUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
-    Info (12023): Found entity 1: ShiftUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
+    Info (12022): Found design unit 1: ShiftUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
+    Info (12023): Found entity 1: ShiftUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/execunit.vhd
-    Info (12022): Found design unit 1: ExecUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
-    Info (12023): Found entity 1: ExecUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ExecUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
+    Info (12023): Found entity 1: ExecUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/arithunit.vhd
-    Info (12022): Found design unit 1: ArithUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
-    Info (12023): Found entity 1: ArithUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ArithUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
+    Info (12023): Found entity 1: ArithUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
 Info (12021): Found 4 design units, including 2 entities, in source file sourcecode/adder.vhd
-    Info (12022): Found design unit 1: rippleadder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
-    Info (12022): Found design unit 2: FullAdder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
-    Info (12023): Found entity 1: rippleadder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
-    Info (12023): Found entity 2: FullAdder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
+    Info (12022): Found design unit 1: rippleadder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
+    Info (12022): Found design unit 2: FullAdder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
+    Info (12023): Found entity 1: rippleadder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
+    Info (12023): Found entity 2: FullAdder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/logicunit.vhd
-    Info (12022): Found design unit 1: LogicUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
-    Info (12023): Found entity 1: LogicUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
-Info (12127): Elaborating entity "SLL64" for the top level hierarchy
+    Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
+    Info (12023): Found entity 1: LogicUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
+Info (12127): Elaborating entity "ShiftUnit" for the top level hierarchy
+Info (12128): Elaborating entity "SLL64" for hierarchy "SLL64:SLLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 32
+Info (12128): Elaborating entity "SRL64" for hierarchy "SRL64:SRLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 33
+Info (12128): Elaborating entity "SRA64" for hierarchy "SRA64:SRAcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 508 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 70 input pins
+Warning (21074): Design contains 58 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "B[6]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[7]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[8]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[9]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[10]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[11]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[12]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[13]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[14]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[15]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[16]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[17]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[18]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[19]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[20]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[21]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[22]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[23]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[24]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[25]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[26]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[27]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[28]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[29]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[30]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[31]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[32]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[33]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[34]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[35]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[36]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[37]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[38]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[39]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[40]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[41]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[42]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[43]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[44]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[45]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[46]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[47]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[48]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[49]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[50]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[51]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[52]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[53]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[54]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[55]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[56]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[57]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[58]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[59]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[60]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[61]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[62]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+    Warning (15610): No output dependent on input pin "B[63]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
+Info (21057): Implemented 1629 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 195 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 374 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Tue Apr 14 17:30:36 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21061): Implemented 1370 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Tue Apr 14 18:20:43 2020
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:40
 
 
