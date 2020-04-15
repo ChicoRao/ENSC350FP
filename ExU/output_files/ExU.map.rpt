@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ExU
-Tue Apr 14 18:20:43 2020
+Tue Apr 14 19:22:02 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,13 +15,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |ShiftUnit
- 11. Parameter Settings for User Entity Instance: SLL64:SLLcircuit
- 12. Parameter Settings for User Entity Instance: SRL64:SRLcircuit
- 13. Parameter Settings for User Entity Instance: SRA64:SRAcircuit
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |ExecUnit
+ 11. Parameter Settings for User Entity Instance: ArithUnit:ArithUnit
+ 12. Parameter Settings for User Entity Instance: ArithUnit:ArithUnit|rippleadder:add
+ 13. Parameter Settings for User Entity Instance: LogicUnit:LogicUnit
+ 14. Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit
+ 15. Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SLL64:SLLcircuit
+ 16. Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SRL64:SRLcircuit
+ 17. Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SRA64:SRAcircuit
+ 18. Port Connectivity Checks: "ArithUnit:ArithUnit"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +52,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 14 18:20:42 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 14 19:22:02 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ExU                                         ;
-; Top-level Entity Name              ; ShiftUnit                                   ;
+; Top-level Entity Name              ; ExecUnit                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,370                                       ;
-;     Total combinational functions  ; 1,370                                       ;
+; Total logic elements               ; 1,705                                       ;
+;     Total combinational functions  ; 1,705                                       ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 259                                         ;
+; Total pins                         ; 204                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +75,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; ShiftUnit          ; ExU                ;
+; Top-level entity name                                            ; ExecUnit           ; ExU                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -155,30 +160,36 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; SourceCode/SRL64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd     ;         ;
-; SourceCode/SRA64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd     ;         ;
-; SourceCode/SLL64.vhd             ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd     ;         ;
-; SourceCode/ShiftUnit.vhd         ; yes             ; User VHDL File  ; C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; SourceCode/SRL64.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd     ;         ;
+; SourceCode/SRA64.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd     ;         ;
+; SourceCode/SLL64.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd     ;         ;
+; SourceCode/ShiftUnit.vhd         ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd ;         ;
+; SourceCode/ExecUnit.vhd          ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd  ;         ;
+; SourceCode/ArithUnit.vhd         ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd ;         ;
+; SourceCode/Adder.vhd             ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd     ;         ;
+; SourceCode/LogicUnit.vhd         ; yes             ; User VHDL File  ; H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -186,43 +197,111 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 1,370      ;
+; Estimated Total logic elements              ; 1,705      ;
 ;                                             ;            ;
-; Total combinational functions               ; 1370       ;
+; Total combinational functions               ; 1705       ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 958        ;
-;     -- 3 input functions                    ; 377        ;
-;     -- <=2 input functions                  ; 35         ;
+;     -- 4 input functions                    ; 1196       ;
+;     -- 3 input functions                    ; 369        ;
+;     -- <=2 input functions                  ; 140        ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 1370       ;
+;     -- normal mode                          ; 1705       ;
 ;     -- arithmetic mode                      ; 0          ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
 ;     -- Dedicated logic registers            ; 0          ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
-; I/O pins                                    ; 259        ;
+; I/O pins                                    ; 204        ;
 ;                                             ;            ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
-; Maximum fan-out node                        ; B[0]~input ;
-; Maximum fan-out                             ; 234        ;
-; Total fan-out                               ; 5356       ;
-; Average fan-out                             ; 2.84       ;
+; Maximum fan-out node                        ; B[2]~input ;
+; Maximum fan-out                             ; 227        ;
+; Total fan-out                               ; 6442       ;
+; Average fan-out                             ; 3.05       ;
 +---------------------------------------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
-; |ShiftUnit                 ; 1370 (559)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 259  ; 0            ; |ShiftUnit                  ; ShiftUnit   ; work         ;
-;    |SLL64:SLLcircuit|      ; 266 (266)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SLL64:SLLcircuit ; SLL64       ; work         ;
-;    |SRA64:SRAcircuit|      ; 251 (251)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SRA64:SRAcircuit ; SRA64       ; work         ;
-;    |SRL64:SRLcircuit|      ; 294 (294)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ShiftUnit|SRL64:SRLcircuit ; SRL64       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
++--------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                 ; Entity Name ; Library Name ;
++--------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+-------------+--------------+
+; |ExecUnit                                        ; 1705 (497)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 204  ; 0            ; |ExecUnit                                                                           ; ExecUnit    ; work         ;
+;    |ArithUnit:ArithUnit|                         ; 221 (88)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit                                                       ; ArithUnit   ; work         ;
+;       |rippleadder:add|                          ; 133 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add                                       ; rippleadder ; work         ;
+;          |FullAdder:\rippleAdder:0:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:10:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:10:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:11:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:11:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:12:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:12:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:13:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:13:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:14:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:14:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:15:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:15:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:16:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:16:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:17:RippleAdder| ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:17:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:18:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:18:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:19:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:19:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:1:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:1:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:20:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:20:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:21:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:21:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:22:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:22:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:23:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:23:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:24:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:24:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:25:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:25:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:26:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:26:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:27:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:27:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:28:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:28:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:29:RippleAdder| ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:29:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:2:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:2:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:30:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:30:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:31:RippleAdder| ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:31:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:32:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:32:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:33:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:33:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:34:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:34:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:35:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:35:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:36:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:36:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:37:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:37:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:38:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:38:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:39:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:39:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:3:RippleAdder|  ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:3:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:40:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:40:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:41:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:41:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:42:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:42:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:43:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:43:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:44:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:44:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:45:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:45:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:46:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:46:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:47:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:47:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:48:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:48:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:49:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:49:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:4:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:4:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:50:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:50:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:51:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:51:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:52:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:52:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:53:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:53:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:54:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:54:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:55:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:55:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:56:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:56:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:57:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:57:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:58:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:58:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:59:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:59:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:5:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:5:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:60:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:60:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:61:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:61:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:62:RippleAdder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:62:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:63:RippleAdder| ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:63:RippleAdder ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:6:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:6:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:7:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:7:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:8:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:8:RippleAdder  ; FullAdder   ; work         ;
+;          |FullAdder:\rippleAdder:9:RippleAdder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:9:RippleAdder  ; FullAdder   ; work         ;
+;    |LogicUnit:LogicUnit|                         ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|LogicUnit:LogicUnit                                                       ; LogicUnit   ; work         ;
+;    |ShiftUnit:ShiftUnit|                         ; 981 (212)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ShiftUnit:ShiftUnit                                                       ; ShiftUnit   ; work         ;
+;       |SLL64:SLLcircuit|                         ; 268 (268)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ShiftUnit:ShiftUnit|SLL64:SLLcircuit                                      ; SLL64       ; work         ;
+;       |SRA64:SRAcircuit|                         ; 229 (229)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ShiftUnit:ShiftUnit|SRA64:SRAcircuit                                      ; SRA64       ; work         ;
+;       |SRL64:SRLcircuit|                         ; 272 (272)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ExecUnit|ShiftUnit:ShiftUnit|SRL64:SRLcircuit                                      ; SRL64       ; work         ;
++--------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -241,64 +320,115 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y2[6]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y2[54] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y1[18] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SLL64:SLLcircuit|Y1[55] ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y1[26] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y2[58] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRL64:SRLcircuit|Y2[2]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRA64:SRAcircuit|Y1[46] ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 93 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|Y                       ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |ShiftUnit|SRL64:SRLcircuit|Y2[2]  ;
-; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |ShiftUnit|seA_Y3[20]              ;
-; 12:1               ; 27 bits   ; 216 LEs       ; 216 LEs              ; 0 LEs                  ; No         ; |ShiftUnit|Y                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRL64:SRLcircuit|Y2[56] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRA64:SRAcircuit|Y2[52] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SLL64:SLLcircuit|Y1[19] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SLL64:SLLcircuit|Y1[52] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRA64:SRAcircuit|Y1[27] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRA64:SRAcircuit|Y2[58] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRL64:SRLcircuit|Y2[2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SRA64:SRAcircuit|Y1[36] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|SLL64:SLLcircuit|Y2[61] ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 145 LEs              ; 0 LEs                  ; No         ; |ExecUnit|ShiftUnit:ShiftUnit|seA_Y3[6]               ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 217 LEs              ; 31 LEs                 ; No         ; |ExecUnit|Y                                           ;
+; 18:1               ; 27 bits   ; 324 LEs       ; 297 LEs              ; 27 LEs                 ; No         ; |ExecUnit|Y                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ShiftUnit ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 64    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ExecUnit ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 64    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SLL64:SLLcircuit ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; n              ; 64    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ArithUnit:ArithUnit ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 64    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SRL64:SRLcircuit ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; n              ; 64    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ArithUnit:ArithUnit|rippleadder:add ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; width          ; 64    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SRA64:SRAcircuit ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; n              ; 64    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LogicUnit:LogicUnit ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 64    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 64    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SLL64:SLLcircuit ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 64    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SRL64:SRLcircuit ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 64    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftUnit:ShiftUnit|SRA64:SRAcircuit ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 64    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ArithUnit:ArithUnit"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; addy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ovfl ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -306,15 +436,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 259                         ;
-; cycloneiii_lcell_comb ; 1370                        ;
-;     normal            ; 1370                        ;
-;         2 data inputs ; 35                          ;
-;         3 data inputs ; 377                         ;
-;         4 data inputs ; 958                         ;
+; boundary_port         ; 204                         ;
+; cycloneiii_lcell_comb ; 1707                        ;
+;     normal            ; 1707                        ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 140                         ;
+;         3 data inputs ; 369                         ;
+;         4 data inputs ; 1196                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.00                       ;
-; Average LUT depth     ; 8.94                        ;
+; Max LUT depth         ; 68.00                       ;
+; Average LUT depth     ; 21.19                       ;
 +-----------------------+-----------------------------+
 
 
@@ -323,7 +454,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -333,110 +464,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Apr 14 18:20:21 2020
+    Info: Processing started: Tue Apr 14 19:21:47 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ExU -c ExU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/srl64.vhd
-    Info (12022): Found design unit 1: SRL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
-    Info (12023): Found entity 1: SRL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
+    Info (12022): Found design unit 1: SRL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 15
+    Info (12023): Found entity 1: SRL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRL64.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sra64.vhd
-    Info (12022): Found design unit 1: SRA64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
-    Info (12023): Found entity 1: SRA64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
+    Info (12022): Found design unit 1: SRA64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 14
+    Info (12023): Found entity 1: SRA64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SRA64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/sll64.vhd
-    Info (12022): Found design unit 1: SLL64-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
-    Info (12023): Found entity 1: SLL64 File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
+    Info (12022): Found design unit 1: SLL64-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 14
+    Info (12023): Found entity 1: SLL64 File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/SLL64.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/shiftunit.vhd
-    Info (12022): Found design unit 1: ShiftUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
-    Info (12023): Found entity 1: ShiftUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
+    Info (12022): Found design unit 1: ShiftUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 15
+    Info (12023): Found entity 1: ShiftUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/execunit.vhd
-    Info (12022): Found design unit 1: ExecUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
-    Info (12023): Found entity 1: ExecUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ExecUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 21
+    Info (12023): Found entity 1: ExecUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/arithunit.vhd
-    Info (12022): Found design unit 1: ArithUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
-    Info (12023): Found entity 1: ArithUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
+    Info (12022): Found design unit 1: ArithUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 19
+    Info (12023): Found entity 1: ArithUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 8
 Info (12021): Found 4 design units, including 2 entities, in source file sourcecode/adder.vhd
-    Info (12022): Found design unit 1: rippleadder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
-    Info (12022): Found design unit 2: FullAdder-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
-    Info (12023): Found entity 1: rippleadder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
-    Info (12023): Found entity 2: FullAdder File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
+    Info (12022): Found design unit 1: rippleadder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 29
+    Info (12022): Found design unit 2: FullAdder-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 42
+    Info (12023): Found entity 1: rippleadder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 6
+    Info (12023): Found entity 2: FullAdder File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file sourcecode/logicunit.vhd
-    Info (12022): Found design unit 1: LogicUnit-rtl File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
-    Info (12023): Found entity 1: LogicUnit File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
-Info (12127): Elaborating entity "ShiftUnit" for the top level hierarchy
-Info (12128): Elaborating entity "SLL64" for hierarchy "SLL64:SLLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 32
-Info (12128): Elaborating entity "SRL64" for hierarchy "SRL64:SRLcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 33
-Info (12128): Elaborating entity "SRA64" for hierarchy "SRA64:SRAcircuit" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 34
+    Info (12022): Found design unit 1: LogicUnit-rtl File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 12
+    Info (12023): Found entity 1: LogicUnit File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/LogicUnit.vhd Line: 5
+Info (12127): Elaborating entity "ExecUnit" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(22): object "addY" assigned a value but never read File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(23): object "cout" assigned a value but never read File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at ExecUnit.vhd(23): object "ovfl" assigned a value but never read File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 23
+Info (12128): Elaborating entity "ArithUnit" for hierarchy "ArithUnit:ArithUnit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 26
+Info (12128): Elaborating entity "rippleadder" for hierarchy "ArithUnit:ArithUnit|rippleadder:add" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ArithUnit.vhd Line: 41
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ArithUnit:ArithUnit|rippleadder:add|FullAdder:\rippleAdder:0:RippleAdder" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/Adder.vhd Line: 36
+Info (12128): Elaborating entity "LogicUnit" for hierarchy "LogicUnit:LogicUnit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 27
+Info (12128): Elaborating entity "ShiftUnit" for hierarchy "ShiftUnit:ShiftUnit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ExecUnit.vhd Line: 28
+Info (12128): Elaborating entity "SLL64" for hierarchy "ShiftUnit:ShiftUnit|SLL64:SLLcircuit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 32
+Info (12128): Elaborating entity "SRL64" for hierarchy "ShiftUnit:ShiftUnit|SRL64:SRLcircuit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 33
+Info (12128): Elaborating entity "SRA64" for hierarchy "ShiftUnit:ShiftUnit|SRA64:SRAcircuit" File: H:/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 58 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "B[6]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[7]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[8]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[9]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[10]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[11]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[12]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[13]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[14]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[15]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[16]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[17]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[18]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[19]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[20]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[21]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[22]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[23]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[24]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[25]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[26]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[27]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[28]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[29]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[30]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[31]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[32]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[33]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[34]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[35]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[36]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[37]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[38]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[39]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[40]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[41]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[42]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[43]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[44]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[45]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[46]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[47]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[48]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[49]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[50]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[51]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[52]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[53]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[54]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[55]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[56]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[57]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[58]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[59]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[60]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[61]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[62]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-    Warning (15610): No output dependent on input pin "B[63]" File: C:/Users/Angus Kan/Documents/GitHub/ENSC350FP/ExU/SourceCode/ShiftUnit.vhd Line: 9
-Info (21057): Implemented 1629 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 195 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 1370 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Tue Apr 14 18:20:43 2020
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:40
+Info (21057): Implemented 1909 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 137 input pins
+    Info (21059): Implemented 67 output pins
+    Info (21061): Implemented 1705 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4815 megabytes
+    Info: Processing ended: Tue Apr 14 19:22:02 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:24
 
 
