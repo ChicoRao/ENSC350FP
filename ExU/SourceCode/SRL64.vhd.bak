@@ -19,15 +19,15 @@ Begin
 	shiftCountBits <= std_logic_vector(ShiftCount);
 
 	--First Barrel Shifter for SRL of 0, 16, 32, 48
-	Y1 <= 	conv_std_logic_vector(x"0000") & X(N-1 downto 16) when shiftCountBits(5 downto 4) = "01" else 
-		conv_std_logic_vector(x"00000000") & X(N-1 downto 32) when shiftCountBits(5 downto 4) = "10" else 
-		conv_std_logic_vector(x"000000000000") & X(N-1 downto 48) when shiftCountBits(5 downto 4) = "11" else 
+	Y1 <= 	x"0000" & X(N-1 downto 16) when shiftCountBits(5 downto 4) = "01" else 
+		x"00000000" & X(N-1 downto 32) when shiftCountBits(5 downto 4) = "10" else 
+		x"000000000000" & X(N-1 downto 48) when shiftCountBits(5 downto 4) = "11" else 
 		X;
 
 	--Second Barrel Shifter for SRL of 0, 4, 8, 12
-	Y2 <= 	conv_std_logic_vector(x"0") & Y1(N-1 downto 4) when shiftCountBits(3 downto 2) = "01" else 
-		conv_std_logic_vector(x"00") & Y1(N-1 downto 8)  when shiftCountBits(3 downto 2) = "10" else 
-		conv_std_logic_vector(x"000") & Y1(N-1 downto 12) when shiftCountBits(3 downto 2) = "11" else 
+	Y2 <= 	x"0" & Y1(N-1 downto 4) when shiftCountBits(3 downto 2) = "01" else 
+		x"00" & Y1(N-1 downto 8)  when shiftCountBits(3 downto 2) = "10" else 
+		x"000" & Y1(N-1 downto 12) when shiftCountBits(3 downto 2) = "11" else 
 		Y1;
 
 	--Third Barrel Shifter for SRL of 0, 1, 2, 3
