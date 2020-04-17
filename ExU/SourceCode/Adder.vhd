@@ -9,7 +9,7 @@ entity rippleadder is
 		Xin,Yin	: in std_logic_vector(width-1 downto 0);
 		Cin : in std_logic;
 		S : out std_logic_vector(width-1 downto 0);
-		Cout64,Cout63 : out std_logic);
+		Cout,C63 : out std_logic);
 end rippleadder;
 
 library IEEE;
@@ -35,8 +35,8 @@ begin
 		begin
           		RippleAdder: entity Work.FullAdder port map ( Xin(i), Yin(i), internalC(i), S(i), internalC(i+1));
 		end generate rippleAdder;
-		Cout64 <= internalC(width);
-		Cout63 <= internalC(width-1);
+		Cout <= internalC(width);
+		C63 <= internalC(width-1);
 end architecture rtl;
 
 Architecture rtl of FullAdder is
