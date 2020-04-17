@@ -19,14 +19,14 @@ Begin
 
 	--First Barrel Shifter for SLL of 0, 16, 32, 48
 	Y1 <= 	X(N-17 downto 0) & x"0000" when shiftCountBits(5 downto 4) = "01" else 
-		X(N-33 downto 0) & to_stdlogicvector(x"00000000") when shiftCountBits(5 downto 4) = "10" else 
-		X(N-49 downto 0) & to_stdlogicvector(x"000000000000") when shiftCountBits(5 downto 4) = "11" else 
+		X(N-33 downto 0) & x"00000000" when shiftCountBits(5 downto 4) = "10" else 
+		X(N-49 downto 0) & x"000000000000" when shiftCountBits(5 downto 4) = "11" else 
 		X;
 
 	--Second Barrel Shifter for SLL of 0, 4, 8, 12
-	Y2 <= 	Y1(N-5 downto 0) & to_stdlogicvector(x"0") when shiftCountBits(3 downto 2) = "01" else 
-		Y1(N-9 downto 0) & to_stdlogicvector(x"00") when shiftCountBits(3 downto 2) = "10" else 
-		Y1(N-13 downto 0) & to_stdlogicvector(x"000") when shiftCountBits(3 downto 2) = "11" else 
+	Y2 <= 	Y1(N-5 downto 0) & x"0" when shiftCountBits(3 downto 2) = "01" else 
+		Y1(N-9 downto 0) & x"00" when shiftCountBits(3 downto 2) = "10" else 
+		Y1(N-13 downto 0) & x"000" when shiftCountBits(3 downto 2) = "11" else 
 		Y1;
 
 	--Third Barrel Shifter for SLL of 0, 1, 2, 3

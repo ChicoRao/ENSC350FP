@@ -25,7 +25,7 @@ Begin
 	      	A;
 
 	--Extract
-	shiftCount <= unsigned(B(4 downto 0)) when ExtWord = '1' else
+	shiftCount <= unsigned("0" & B(4 downto 0)) when ExtWord = '1' else
 		      unsigned(B(5 downto 0));
 
 	--SLL, SRL, and SRA functions

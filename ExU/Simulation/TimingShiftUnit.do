@@ -20,7 +20,7 @@ transcript on
 # Simulation Run
 #----------------------------------------------------------------------------------------------------------
 restart -f
-run 16500 ns
+run 21000 ns
 transcript off
 transcript file ""
 

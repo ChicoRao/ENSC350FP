@@ -1,9 +1,11 @@
+# End time: 17:34:34 on Apr 16,2020, Elapsed time: 0:06:04
+# Errors: 0, Warnings: 2
 #----------------------------------------------------------------------------------------------------------
 # compile
 #----------------------------------------------------------------------------------------------------------
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg ModelSim/ShiftUnit.vho
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:43:06 on Apr 15,2020
+# Start time: 17:34:34 on Apr 16,2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -15,24 +17,24 @@
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity ShiftUnit
 # -- Compiling architecture structure of ShiftUnit
-# End time: 22:43:07 on Apr 15,2020, Elapsed time: 0:00:01
+# End time: 17:34:34 on Apr 16,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg TBShiftUnit.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:43:07 on Apr 15,2020
+# Start time: 17:34:35 on Apr 16,2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TbShiftUnit
 # -- Compiling architecture behavioural of TbShiftUnit
-# End time: 22:43:07 on Apr 15,2020, Elapsed time: 0:00:00
+# End time: 17:34:35 on Apr 16,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -work work -2008 -explicit -stats=time,-cmd,msg ConfigExU.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:43:07 on Apr 15,2020
+# Start time: 17:34:35 on Apr 16,2020
 # -- Loading package STANDARD
 # -- Compiling configuration FuncLUSim
 # -- Loading package TEXTIO
@@ -77,14 +79,14 @@
 # -- Loading entity TbExecUnit
 # -- Loading architecture behavioural of TbExecUnit
 # -- Loading entity ExecUnit
-# End time: 22:43:08 on Apr 15,2020, Elapsed time: 0:00:01
+# End time: 17:34:35 on Apr 16,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 #----------------------------------------------------------------------------------------------------------
 # Start the simulation
 #----------------------------------------------------------------------------------------------------------
 # vsim -t 100ps -gui work.TimeSUSim -sdftyp ../DUT=ModelSim/ShiftUnit.sdo
 # vsim -t 100ps -gui work.TimeSUSim -sdftyp ../DUT=ModelSim/ShiftUnit.sdo 
-# Start time: 22:43:09 on Apr 15,2020
+# Start time: 17:34:35 on Apr 16,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -94,8 +96,6 @@
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
 # Loading work.timesusim
-# SDF 10.5b Compiler 2016.10 Oct  5 2016
-# 
 # Loading work.tbshiftunit(behavioural)
 # Loading work.shiftunit(structure)
 # Loading work.hard_block(structure)
@@ -120,10 +120,12 @@
 # Expect performance to be adversely affected.
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /tbshiftunit File: TBShiftUnit.vhd
-# run 16500 ns
+# run 21000 ns
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
 # ** Note: Using TestVectors from file SRA64Unit00.tvs
 #    Time: 15 ns  Iteration: 0  Instance: /tbshiftunit
+# ** Note: Simulation Completed
+#    Time: 17425 ns  Iteration: 0  Instance: /tbshiftunit
 # transcript off
